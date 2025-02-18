@@ -44,3 +44,57 @@ int main() {
 
     return 0;
 }
+///////////////////////////////////////////////
+#include <stdio.h>
+#include <stdbool.h>
+
+bool esPrimo(int numero){
+    if(numero <= 1){
+        return false;
+    }
+    
+    for(int i = 2;i <= numero /2; i++){
+        if(numero %i ==0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+int numero;
+printf("introduce un nunmero: ");
+scanf("%d", &numero);
+
+if(esPrimo(numero)){
+    printf("%d es un numero primo.\n",numero);
+}
+   else{
+       printf("%d no es un numero primo.\n", numero);
+   }
+   
+
+    return 0;
+}
+/////////////////////////////////////
+#include <stdio.h>
+
+int calcularMCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+    printf("Introduce dos números: ");
+    scanf("%d %d", &a, &b);
+
+    int mcd = calcularMCD(a, b);
+    printf("El MCD de %d y %d es %d.\n", a, b, mcd);
+
+    return 0;
+}
